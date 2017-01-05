@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".tutorial.customview.bezier.Bezier1Activity" />
+        <activity android:name=".tutorial.customview.bezier.Bezier2Activity" />
+        <activity android:name=".tutorial.customview.bezier.Bezier3Activity"></activity>
     </application>
 
 </manifest>

@@ -4,42 +4,34 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.zeller.fastlibrary.MainActivity">
 
-    <com.zeller.fastlibrary.common.widget.FlowLayout
+    <com.zeller.fastlibrary.common.widget.ReboundScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="Welcome" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="IT工程师" />
+            <Button
+                android:id="@+id/bezier1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="贝塞尔一" />
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="学习ing" />
+            <Button
+                android:id="@+id/bezier2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="贝塞尔二" />
+            <Button
+                android:id="@+id/bezier3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="贝塞尔三" />
+        </LinearLayout>
+    </com.zeller.fastlibrary.common.widget.ReboundScrollView>
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="恋爱ing" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="挣钱ing" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="努力ing" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="I thick i can" />
-    </com.zeller.fastlibrary.common.widget.FlowLayout>
 </RelativeLayout>
