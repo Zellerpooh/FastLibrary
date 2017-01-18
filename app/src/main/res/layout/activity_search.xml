@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_24"
+        android:background="@color/common_main_pink"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_46"
+        android:background="@color/common_main_pink"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_8"
+        android:paddingLeft="@dimen/space_8"
+        android:paddingRight="@dimen/space_8"
+        android:paddingTop="@dimen/space_4">
+
+        <TextView
+            android:id="@+id/btn_search_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/space_8"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_text_size" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/common_white_bg_round"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/space_8">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/space_8"
+                android:src="@drawable/home_search" />
+
+            <com.zeller.fastlibrary.searchhistory.CleanEditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:hint="搜索商品"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="@dimen/space_8"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/normal_text_size"></com.zeller.fastlibrary.searchhistory.CleanEditText>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_search_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space_8"
+            android:paddingRight="@dimen/space_8"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_search_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:drawablePadding="10dp"
+            android:text="历史记录"
+            android:textColor="#333333" />
+
+        <View style="@style/line_horizontal_style" />
+
+        <ListView
+            android:id="@+id/listView_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"></ListView>
+
+        <LinearLayout
+            android:id="@+id/ll_search_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_selector_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/space_16"
+            android:paddingTop="@dimen/space_16">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_search_empty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/space_8"
+                android:text="清空历史记录" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

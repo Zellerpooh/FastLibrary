@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.View;
 
