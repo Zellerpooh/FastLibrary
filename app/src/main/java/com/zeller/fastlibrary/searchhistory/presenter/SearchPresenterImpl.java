@@ -2,11 +2,10 @@ package com.zeller.fastlibrary.searchhistory.presenter;
 
 import android.content.Context;
 
-import com.zeller.fastlibrary.searchhistory.SearchHistoryModel;
+import com.zeller.fastlibrary.searchhistory.bean.SearchHistoryModel;
 import com.zeller.fastlibrary.searchhistory.model.OnSearchListener;
 import com.zeller.fastlibrary.searchhistory.model.SearchModel;
 import com.zeller.fastlibrary.searchhistory.model.SearchModelImpl;
-import com.zeller.fastlibrary.searchhistory.view.SearchActivity;
 import com.zeller.fastlibrary.searchhistory.view.SearchView;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
  */
 
 public class SearchPresenterImpl implements SearchPresenter, OnSearchListener {
-    private static final int historyMax = 5;
+    private static final int historyMax = 10;
     private SearchView searchView;
     private SearchModel searchModel;
 

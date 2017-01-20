@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,7 +24,7 @@ import com.zeller.fastlibrary.R;
 import com.zeller.fastlibrary.searchhistory.CleanEditText;
 import com.zeller.fastlibrary.searchhistory.OnSearchHistoryListener;
 import com.zeller.fastlibrary.searchhistory.SearchHistoryAdapter;
-import com.zeller.fastlibrary.searchhistory.SearchHistoryModel;
+import com.zeller.fastlibrary.searchhistory.bean.SearchHistoryModel;
 import com.zeller.fastlibrary.searchhistory.presenter.SearchPresenter;
 import com.zeller.fastlibrary.searchhistory.presenter.SearchPresenterImpl;
 

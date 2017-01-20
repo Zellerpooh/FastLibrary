@@ -1,7 +1,9 @@
-package com.zeller.fastlibrary.searchhistory;
+package com.zeller.fastlibrary.searchhistory.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.zeller.fastlibrary.searchhistory.bean.SearchHistoryModel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,33 +21,33 @@ public class SpHistoryStorage extends BaseHistoryStorage {
     public static final String SEARCH_HISTORY = "search_history";
     private static SimpleDateFormat mFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     private int HISTORY_MAX = 5;
+    private static SpHistoryStorage instance;
 
-    public SpHistoryStorage(Context context, int historyMax) {
-        this.context = context;
+    private SpHistoryStorage(Context context, int historyMax) {
+        this.context = context.getApplicationContext();
         this.HISTORY_MAX = historyMax;
     }
 
-    @Override
-    public void put(String key, String value) {
-        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
-                Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString(key, value);
-        editor.commit();
+    public static synchronized SpHistoryStorage getInstance(Context context, int historyMax) {
+        if (instance == null) {
+            synchronized (SpHistoryStorage.class) {
+                if (instance == null) {
+                    instance = new SpHistoryStorage(context, historyMax);
+                }
+            }
+        }
+        return instance;
     }
 
     @Override
-    public boolean contains(String key) {
-        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
-                Context.MODE_PRIVATE);
-        return sp.contains(key);
-    }
-
-    @Override
-    public Map<String, ?> getAll() {
-        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
-                Context.MODE_PRIVATE);
-        return sp.getAll();
+    public void save(String value) {
+        Map<String, String> historys = (Map<String, String>) getAll();
+        for (Map.Entry<String, String> entry : historys.entrySet()) {
+            if (value.equals(entry.getValue())) {
+                remove(entry.getKey());
+            }
+        }
+        put(generateKey(), value);
     }
 
     @Override
@@ -72,7 +74,8 @@ public class SpHistoryStorage extends BaseHistoryStorage {
     }
 
     @Override
-    public ArrayList<SearchHistoryModel> sortHistory(Map<String, ?> allHistory) {
+    public ArrayList<SearchHistoryModel> sortHistory() {
+        Map<String, ?> allHistory = getAll();
         ArrayList<SearchHistoryModel> mResults = new ArrayList<>();
         Map<String, String> hisAll = (Map<String, String>) getAll();
         //将key排序升序
@@ -85,6 +88,26 @@ public class SpHistoryStorage extends BaseHistoryStorage {
             mResults.add(new SearchHistoryModel((String) keys[keyLeng - i], hisAll.get(keys[keyLeng - i])));
         }
         return mResults;
+    }
+
+    public boolean contains(String key) {
+        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
+                Context.MODE_PRIVATE);
+        return sp.contains(key);
+    }
+
+    public Map<String, ?> getAll() {
+        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
+                Context.MODE_PRIVATE);
+        return sp.getAll();
+    }
+
+    public void put(String key, String value) {
+        SharedPreferences sp = context.getSharedPreferences(SEARCH_HISTORY,
+                Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(key, value);
+        editor.commit();
     }
 
 }

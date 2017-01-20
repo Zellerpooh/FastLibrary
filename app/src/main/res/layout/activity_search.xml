@@ -95,6 +95,7 @@
             android:layout_height="wrap_content"
             android:divider="@null"></ListView>
 
+
         <LinearLayout
             android:id="@+id/ll_search_empty"
             android:layout_width="match_parent"
@@ -118,4 +119,5 @@
                 android:text="清空历史记录" />
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

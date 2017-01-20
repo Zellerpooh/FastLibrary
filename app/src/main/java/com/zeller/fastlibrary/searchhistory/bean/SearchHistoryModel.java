@@ -1,4 +1,4 @@
-package com.zeller.fastlibrary.searchhistory;
+package com.zeller.fastlibrary.searchhistory.bean;
 
 import java.io.Serializable;
 

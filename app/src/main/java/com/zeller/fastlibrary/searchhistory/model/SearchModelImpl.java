@@ -1,13 +1,10 @@
 package com.zeller.fastlibrary.searchhistory.model;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.zeller.fastlibrary.searchhistory.BaseHistoryStorage;
-import com.zeller.fastlibrary.searchhistory.SearchHistoryModel;
-import com.zeller.fastlibrary.searchhistory.SpHistoryStorage;
-
-import java.util.ArrayList;
+import com.zeller.fastlibrary.searchhistory.storage.BaseHistoryStorage;
+import com.zeller.fastlibrary.searchhistory.storage.DbHistoryStorage;
+import com.zeller.fastlibrary.searchhistory.storage.SpHistoryStorage;
 
 /**
  * Created by Zellerpooh on 17/1/18.
@@ -18,7 +15,8 @@ public class SearchModelImpl implements SearchModel {
     private BaseHistoryStorage historyStorage;
 
     public SearchModelImpl(Context context, int historyMax) {
-        historyStorage = new SpHistoryStorage(context, historyMax);
+//        historyStorage = SpHistoryStorage.getInstance(context, historyMax);
+        historyStorage = DbHistoryStorage.getInstance(context, historyMax);
     }
 
     @Override
@@ -43,6 +41,6 @@ public class SearchModelImpl implements SearchModel {
 
     @Override
     public void sortHistory(OnSearchListener onSearchListener) {
-        onSearchListener.onSortSuccess(historyStorage.sortHistory(historyStorage.getAll()));
+        onSearchListener.onSortSuccess(historyStorage.sortHistory());
     }
 }

@@ -1,11 +1,5 @@
 package com.zeller.fastlibrary.searchhistory.model;
 
-import android.content.Context;
-
-import com.zeller.fastlibrary.searchhistory.SearchHistoryModel;
-
-import java.util.ArrayList;
-
 /**
  * Created by Zellerpooh on 17/1/18.
  */

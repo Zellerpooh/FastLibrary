@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zeller.fastlibrary.R;
+import com.zeller.fastlibrary.searchhistory.OnSearchHistoryListener;
+import com.zeller.fastlibrary.searchhistory.bean.SearchHistoryModel;
 
 import java.util.ArrayList;
 

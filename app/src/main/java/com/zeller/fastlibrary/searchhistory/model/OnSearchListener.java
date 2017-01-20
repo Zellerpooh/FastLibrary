@@ -1,6 +1,6 @@
 package com.zeller.fastlibrary.searchhistory.model;
 
-import com.zeller.fastlibrary.searchhistory.SearchHistoryModel;
+import com.zeller.fastlibrary.searchhistory.bean.SearchHistoryModel;
 
 import java.util.ArrayList;
 
