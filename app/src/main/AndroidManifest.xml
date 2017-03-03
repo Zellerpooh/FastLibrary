@@ -3,14 +3,13 @@
     package="com.zeller.fastlibrary">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".tutorial.customview.bezier.Bezier1Activity" />
         <activity android:name=".tutorial.customview.bezier.Bezier2Activity" />
         <activity android:name=".tutorial.customview.bezier.Bezier3Activity" />
@@ -20,6 +19,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".dagger2.Dagger2Activity"></activity>
+        <activity android:name=".dagger2.lesson2.OtherActivity" />
+        <activity android:name=".keystore.KeyStoreActivity"></activity>
+        <activity android:name=".greendaoTest.Main2Activity">
+
         </activity>
     </application>
 

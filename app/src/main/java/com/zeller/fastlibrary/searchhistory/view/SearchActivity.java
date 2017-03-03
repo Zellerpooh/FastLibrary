@@ -45,8 +45,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView {
     TextView btnSearchCancel;
     @Bind(R.id.et_search)
     CleanEditText etSearch;
-    @Bind(R.id.btn_search_check)
-    TextView btnSearchCheck;
     @Bind(R.id.listView_history)
     ListView listViewHistory;
     @Bind(R.id.ll_search_empty)

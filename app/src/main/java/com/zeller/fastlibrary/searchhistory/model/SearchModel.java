@@ -6,7 +6,6 @@ package com.zeller.fastlibrary.searchhistory.model;
 
 public interface SearchModel {
 
-
     void save(String value);
 
     void search(String value,OnSearchListener onSearchListener);

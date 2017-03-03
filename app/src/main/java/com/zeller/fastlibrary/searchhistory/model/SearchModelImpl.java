@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.zeller.fastlibrary.searchhistory.storage.BaseHistoryStorage;
 import com.zeller.fastlibrary.searchhistory.storage.DbHistoryStorage;
+import com.zeller.fastlibrary.searchhistory.storage.GreenDaoHistoryStorage;
 import com.zeller.fastlibrary.searchhistory.storage.SpHistoryStorage;
 
 /**
@@ -16,7 +17,8 @@ public class SearchModelImpl implements SearchModel {
 
     public SearchModelImpl(Context context, int historyMax) {
 //        historyStorage = SpHistoryStorage.getInstance(context, historyMax);
-        historyStorage = DbHistoryStorage.getInstance(context, historyMax);
+//        historyStorage = DbHistoryStorage.getInstance(context, historyMax);
+        historyStorage = GreenDaoHistoryStorage.getInstance(context, historyMax);
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 
 public class SearchPresenterImpl implements SearchPresenter, OnSearchListener {
-    private static final int historyMax = 10;
+    private static final int historyMax = 5;
     private SearchView searchView;
     private SearchModel searchModel;
 
